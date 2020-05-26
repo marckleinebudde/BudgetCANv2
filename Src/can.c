@@ -149,7 +149,7 @@ bool can_is_enabled(FDCAN_HandleTypeDef *hcan)
 bool can_receive(FDCAN_HandleTypeDef *hcan, struct gs_host_frame *rx_frame)
 {
     FDCAN_RxHeaderTypeDef RxHeader;
-    uint8_t RxData[64];
+    uint8_t RxData[8];
     
     if (HAL_FDCAN_GetRxMessage(hcan, FDCAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
     {
@@ -188,7 +188,7 @@ bool can_receive(FDCAN_HandleTypeDef *hcan, struct gs_host_frame *rx_frame)
 bool can_send(FDCAN_HandleTypeDef *hcan, struct gs_host_frame *frame)
 {
     FDCAN_TxHeaderTypeDef TxHeader;
-    uint8_t TxData[16];
+    uint8_t TxData[8];
     
     if (frame->can_id & CAN_RTR_FLAG)
     {
