@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{5236A97F-F0FA-4D07-9584-19D26B0B5DC0}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="VisualGDBPackageDefinitions">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
+    <BSP_VERSION>2020.01</BSP_VERSION>
+  </PropertyGroup>
+  <ImportGroup Label="VisualGDBFindComponents">
+    <Import Project="$(LOCALAPPDATA)\VisualGDB\FindComponents.props" />
+  </ImportGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeIncludeSearchPath>.;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\arm-none-eabi\thumb\v7e-m\nofp;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\backward;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include-fixed;$(TOOLCHAIN_ROOT)\arm-none-eabi\include;Inc;Drivers\CMSIS\Include;Drivers\CMSIS\Device\ST\STM32G4xx\Include;Drivers\STM32G4xx_HAL_Driver\Inc;Drivers\STM32G4xx_HAL_Driver\Inc\Legacy;Middlewares\ST\STM32_USB_Device_Library\Core\Inc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(BSP_ROOT)\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)BudgetCANv2-Debug.vgdbsettings</NMakeOutput>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeIncludeSearchPath>.;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\arm-none-eabi\thumb\v7e-m\nofp;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\backward;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include-fixed;$(TOOLCHAIN_ROOT)\arm-none-eabi\include;Inc;Drivers\CMSIS\Include;Drivers\CMSIS\Device\ST\STM32G4xx\Include;Drivers\STM32G4xx_HAL_Driver\Inc;Drivers\STM32G4xx_HAL_Driver\Inc\Legacy;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(BSP_ROOT)\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)BudgetCANv2-Release.vgdbsettings</NMakeOutput>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c" />
+    <ClCompile Include="Src\can.c" />
+    <ClCompile Include="Src\dfu.c" />
+    <ClCompile Include="Src\flash.c" />
+    <ClCompile Include="Src\gpio.c" />
+    <ClCompile Include="Src\led.c" />
+    <ClCompile Include="Src\queue.c" />
+    <ClCompile Include="Src\stm32g4xx_it.c" />
+    <ClCompile Include="Src\stm32g4xx_hal_msp.c" />
+    <ClCompile Include="Src\main.c" />
+    <ClCompile Include="Drivers\CMSIS\Device\ST\STM32G4xx\Source\Templates\system_stm32g4xx.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_pwr.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_exti.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_fdcan.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_pwr.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_pwr_ex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_flash.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_flash_ex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_flash_ramfunc.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_gpio.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_pcd.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_pcd_ex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_usb.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_rcc.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_rcc_ex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_cortex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_dma.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_dma_ex.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_tim.c" />
+    <ClCompile Include="Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_tim_ex.c" />
+    <ClCompile Include="Src\timer.c" />
+    <ClCompile Include="Src\usbd_conf.c" />
+    <ClCompile Include="Src\usbd_desc.c" />
+    <ClCompile Include="Src\usbd_gs_can.c" />
+    <ClCompile Include="Src\util.c" />
+    <ClInclude Include="Inc\timer.h" />
+    <ClInclude Include="Inc\usbd_conf.h" />
+    <ClInclude Include="Inc\usbd_desc.h" />
+    <ClInclude Include="Inc\usbd_gs_can.h" />
+    <ClInclude Include="Inc\util.h" />
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h" />
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h" />
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h" />
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h" />
+    <None Include="stm32.mak" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\StartupFiles\startup_stm32g431xx.c" />
+    <ClInclude Include="Inc\can.h" />
+    <ClInclude Include="Inc\config.h" />
+    <ClInclude Include="Inc\dfu.h" />
+    <ClInclude Include="Inc\flash.h" />
+    <ClInclude Include="Inc\gpio.h" />
+    <ClInclude Include="Inc\gs_usb.h" />
+    <ClInclude Include="Inc\led.h" />
+    <ClInclude Include="Inc\queue.h" />
+    <ClInclude Include="Inc\stm32g4xx_it.h" />
+    <ClInclude Include="Inc\stm32g4xx_hal_conf.h" />
+    <ClInclude Include="Inc\main.h" />
+    <ClInclude Include="Drivers\CMSIS\Include\core_cm4.h" />
+    <ClInclude Include="Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g4xx.h" />
+    <ClInclude Include="Drivers\CMSIS\Device\ST\STM32G4xx\Include\system_stm32g4xx.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_def.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_pwr.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_exti.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_fdcan.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ramfunc.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pcd.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pcd_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_usb.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_cortex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma_ex.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim.h" />
+    <ClInclude Include="Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h" />
+    <None Include="Makefile" />
+    <None Include="debug.mak" />
+    <None Include="release.mak" />
+    <None Include="BudgetCANv2-Debug.vgdbsettings" />
+    <None Include="BudgetCANv2-Release.vgdbsettings" />
+    <None Include="stm32.xml" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c" />
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc\usbd_cdc.h" />
+  </ItemGroup>
+</Project>
